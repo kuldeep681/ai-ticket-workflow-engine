@@ -1,0 +1,208 @@
+ENTERPRISE LAPTOP HARDWARE TROUBLESHOOTING GUIDE
+Version: 3.0
+Department: Hardware Support Operations
+Last Updated: March 2026
+
+============================================================
+1. OVERVIEW
+============================================================
+
+This document provides troubleshooting procedures for enterprise
+laptop hardware issues affecting employees and contractors.
+
+Supported Hardware Vendors:
+- Dell
+- Lenovo
+- HP
+- Microsoft Surface
+
+Supported Components:
+- Keyboard
+- Touchpad
+- Battery
+- Display
+- RAM
+- SSD Storage
+- Docking Stations
+
+============================================================
+2. COMMON HARDWARE ISSUES
+============================================================
+
+Users may report:
+- Laptop not powering on
+- Battery not charging
+- Keyboard malfunction
+- Touchpad not responding
+- External monitor not detected
+- Device overheating
+- Slow system performance
+- USB ports not functioning
+
+============================================================
+3. PRELIMINARY CHECKS
+============================================================
+
+Verify:
+- Charger connected properly
+- Power outlet operational
+- Battery status normal
+- No visible physical damage
+- External devices disconnected
+
+============================================================
+4. STANDARD TROUBLESHOOTING PROCEDURES
+============================================================
+
+STEP 1 — VERIFY POWER SUPPLY
+
+Check:
+- AC adapter functionality
+- Power cable integrity
+- Docking station power connection
+
+Expected Result:
+Device receives stable power.
+
+------------------------------------------------------------
+
+STEP 2 — PERFORM HARD RESTART
+
+Procedure:
+1. Hold power button for 15 seconds
+2. Disconnect charger
+3. Reconnect power
+4. Restart device
+
+Expected Result:
+Temporary firmware or power issues resolved.
+
+------------------------------------------------------------
+
+STEP 3 — TEST EXTERNAL DEVICES
+
+Disconnect:
+- USB devices
+- External monitors
+- Docking stations
+
+Reconnect devices individually to isolate faults.
+
+------------------------------------------------------------
+
+STEP 4 — RUN HARDWARE DIAGNOSTICS
+
+Vendor diagnostic tools:
+- Dell SupportAssist
+- Lenovo Diagnostics
+- HP Hardware Diagnostics
+
+Check:
+- Battery health
+- SSD health
+- Memory integrity
+- CPU temperature
+
+============================================================
+5. ADVANCED HARDWARE ISSUES
+============================================================
+
+============================================================
+5.1 OVERHEATING
+============================================================
+
+Symptoms:
+- Loud fan noise
+- Unexpected shutdowns
+- Performance throttling
+
+Resolution:
+- Clean air vents
+- Verify fan operation
+- Replace thermal paste if required
+
+============================================================
+5.2 BATTERY FAILURE
+============================================================
+
+Symptoms:
+- Battery drains rapidly
+- Charging interrupted
+- Battery not detected
+
+Resolution:
+- Update BIOS firmware
+- Replace battery if degraded
+- Verify charger wattage compatibility
+
+============================================================
+5.3 DISPLAY ISSUES
+============================================================
+
+Symptoms:
+- Black screen
+- Flickering display
+- External monitor not detected
+
+Resolution:
+- Update graphics drivers
+- Test alternate display cable
+- Verify docking station firmware
+
+============================================================
+6. DEVICE REPLACEMENT POLICY
+============================================================
+
+Devices may qualify for replacement if:
+- Warranty active
+- Hardware failure confirmed
+- Repair cost exceeds threshold
+- Device age exceeds lifecycle policy
+
+============================================================
+7. SECURITY BEST PRACTICES
+============================================================
+
+Employees must:
+- Use encrypted storage
+- Avoid unauthorized hardware modifications
+- Report stolen devices immediately
+- Lock devices when unattended
+
+============================================================
+8. ESCALATION MATRIX
+============================================================
+
+LEVEL 1 SUPPORT:
+- Basic diagnostics
+- Peripheral troubleshooting
+- Restart procedures
+
+LEVEL 2 HARDWARE TEAM:
+- Component replacement
+- BIOS troubleshooting
+- Warranty repair coordination
+
+LEVEL 3 INFRASTRUCTURE TEAM:
+- Enterprise hardware deployment failures
+- Mass hardware incidents
+
+============================================================
+9. INCIDENT PRIORITY GUIDELINES
+============================================================
+
+LOW:
+- Minor peripheral malfunction
+
+MEDIUM:
+- Single-user laptop failure
+
+HIGH:
+- Multiple device failures
+
+CRITICAL:
+- Enterprise hardware deployment outage
+
+============================================================
+10. DOCUMENT END
+============================================================

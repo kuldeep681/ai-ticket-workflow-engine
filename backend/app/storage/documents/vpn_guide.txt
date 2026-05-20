@@ -1,0 +1,287 @@
+ENTERPRISE VPN TROUBLESHOOTING GUIDE
+Version: 2.4
+Department: Security Operations
+Last Updated: March 2026
+
+============================================================
+1. OVERVIEW
+============================================================
+
+This document provides troubleshooting procedures, escalation workflows,
+and best practices for resolving enterprise VPN connectivity issues.
+
+The corporate VPN infrastructure allows employees to securely access
+internal systems, applications, and databases while working remotely.
+
+Supported VPN Clients:
+- Cisco AnyConnect
+- FortiClient VPN
+- GlobalProtect VPN
+- OpenVPN Enterprise Edition
+
+Supported Authentication Methods:
+- Username and Password
+- Multi-Factor Authentication (MFA)
+- Security Tokens
+- Mobile Authenticator Applications
+
+============================================================
+2. COMMON VPN ISSUES
+============================================================
+
+Employees may experience one or more of the following problems:
+
+- VPN not connecting
+- Authentication failure
+- MFA verification failed
+- Connection timeout
+- Frequent disconnections
+- Unable to access internal resources
+- VPN client crashes
+- DNS resolution failure
+- Tunnel establishment failed
+- Secure gateway unavailable
+
+============================================================
+3. PRELIMINARY CHECKS
+============================================================
+
+Before advanced troubleshooting begins, verify the following:
+
+1. User has active internet connection
+2. User account is not locked
+3. VPN server status is operational
+4. MFA service is available
+5. Firewall is not blocking VPN ports
+6. User device has latest VPN client installed
+7. Corporate security certificate is valid
+
+============================================================
+4. STANDARD VPN TROUBLESHOOTING WORKFLOW
+============================================================
+
+STEP 1 — VERIFY INTERNET CONNECTIVITY
+
+Ask the user to open public websites such as:
+- https://google.com
+- https://microsoft.com
+
+If websites fail to load:
+- Restart modem/router
+- Verify ISP connectivity
+- Test alternate network
+
+Expected Result:
+Stable internet connection confirmed.
+
+------------------------------------------------------------
+
+STEP 2 — RESTART VPN CLIENT
+
+Completely close the VPN application.
+
+On Windows:
+- Open Task Manager
+- End VPN-related processes
+
+Reopen the VPN client and reconnect.
+
+Expected Result:
+Temporary session corruption cleared.
+
+------------------------------------------------------------
+
+STEP 3 — VERIFY USER CREDENTIALS
+
+Confirm:
+- Correct username entered
+- Correct password entered
+- Password recently changed
+- CAPS LOCK disabled
+
+Important:
+If password was recently reset, Active Directory synchronization
+may require 5–15 minutes before VPN authentication succeeds.
+
+Expected Result:
+Authentication accepted successfully.
+
+------------------------------------------------------------
+
+STEP 4 — VERIFY MULTI-FACTOR AUTHENTICATION
+
+Common MFA Issues:
+- Expired token
+- Mobile authenticator desynchronization
+- Push notification delay
+- Time mismatch on mobile device
+
+Resolution Steps:
+1. Resync authenticator app
+2. Verify mobile device time settings
+3. Retry MFA challenge
+4. Generate backup verification code
+
+Expected Result:
+MFA verification completed successfully.
+
+------------------------------------------------------------
+
+STEP 5 — VERIFY VPN SERVER AVAILABILITY
+
+Check:
+- VPN gateway status dashboard
+- Security monitoring portal
+- Internal outage notifications
+
+If outage exists:
+- Inform user about maintenance window
+- Redirect to alternate gateway if available
+
+Expected Result:
+VPN gateway reachable and operational.
+
+------------------------------------------------------------
+
+STEP 6 — CLEAR DNS CACHE
+
+On Windows:
+ipconfig /flushdns
+
+On macOS:
+sudo dscacheutil -flushcache
+
+Expected Result:
+Internal DNS entries refreshed.
+
+------------------------------------------------------------
+
+STEP 7 — REINSTALL VPN CLIENT
+
+If corruption is suspected:
+
+1. Uninstall VPN software
+2. Restart device
+3. Download latest approved installer
+4. Install using administrator privileges
+
+Expected Result:
+Fresh VPN installation completed successfully.
+
+============================================================
+5. ADVANCED TROUBLESHOOTING
+============================================================
+
+============================================================
+5.1 SPLIT TUNNELING ISSUES
+============================================================
+
+Symptoms:
+- Internal applications inaccessible
+- Public internet works
+- Certain services unreachable
+
+Resolution:
+- Verify split tunnel configuration
+- Update routing policies
+- Reconnect VPN session
+
+============================================================
+5.2 CERTIFICATE VALIDATION FAILURE
+============================================================
+
+Symptoms:
+- Secure tunnel rejected
+- Certificate mismatch
+- Trust validation errors
+
+Resolution:
+- Reinstall enterprise root certificates
+- Verify system date/time
+- Update security policies
+
+============================================================
+5.3 DNS RESOLUTION FAILURE
+============================================================
+
+Symptoms:
+- Internal hostnames not resolving
+- IP addresses reachable directly
+
+Resolution:
+- Flush DNS cache
+- Verify DNS suffix assignment
+- Restart DNS Client service
+
+============================================================
+6. SECURITY BEST PRACTICES
+============================================================
+
+Employees must follow the following guidelines:
+
+- Never share VPN credentials
+- Use MFA at all times
+- Do not install unauthorized VPN software
+- Disconnect VPN when not required
+- Report suspicious login attempts immediately
+- Avoid public WiFi when accessing sensitive systems
+
+============================================================
+7. ESCALATION MATRIX
+============================================================
+
+LEVEL 1 SUPPORT:
+Handles:
+- Password verification
+- Basic connectivity checks
+- MFA assistance
+
+LEVEL 2 SECURITY TEAM:
+Handles:
+- VPN gateway failures
+- Security certificate issues
+- Authentication backend problems
+
+LEVEL 3 INFRASTRUCTURE TEAM:
+Handles:
+- Enterprise network outages
+- Firewall failures
+- VPN server maintenance
+
+============================================================
+8. INCIDENT PRIORITY GUIDELINES
+============================================================
+
+LOW:
+- Single user intermittent disconnects
+
+MEDIUM:
+- MFA synchronization failures
+
+HIGH:
+- Multiple users unable to connect
+
+CRITICAL:
+- Entire organization VPN outage
+- Security breach involving VPN infrastructure
+
+============================================================
+9. FAQ
+============================================================
+
+Q: VPN stopped working after password reset.
+A: Wait 5–15 minutes for Active Directory synchronization, then reconnect.
+
+------------------------------------------------------------
+
+Q: MFA notification not appearing.
+A: Verify mobile internet connectivity and authenticator settings.
+
+------------------------------------------------------------
+
+Q: VPN connects but internal systems unavailable.
+A: Check DNS resolution and split tunnel configuration.
+
+============================================================
+10. DOCUMENT END
+============================================================

@@ -1,0 +1,191 @@
+ENTERPRISE MFA TROUBLESHOOTING GUIDE
+Version: 2.5
+Department: Security Operations
+Last Updated: March 2026
+
+============================================================
+1. OVERVIEW
+============================================================
+
+This document provides troubleshooting procedures for Multi-Factor
+Authentication (MFA) related issues across enterprise systems.
+
+Supported MFA Methods:
+- Microsoft Authenticator
+- Google Authenticator
+- SMS Verification
+- Hardware Security Tokens
+- Push Notifications
+
+Supported Systems:
+- VPN Access
+- Enterprise Email
+- Internal Portals
+- Cloud Applications
+- Remote Desktop Access
+
+============================================================
+2. COMMON MFA ISSUES
+============================================================
+
+Users may experience:
+- MFA code not accepted
+- Push notification missing
+- Authenticator app out of sync
+- Expired token
+- Mobile device lost
+- Repeated authentication prompts
+- Login loop issues
+
+============================================================
+3. PRELIMINARY CHECKS
+============================================================
+
+Verify:
+- Internet connectivity available
+- Mobile device operational
+- Device date and time synchronized
+- MFA enrollment active
+- Authentication servers operational
+
+============================================================
+4. STANDARD MFA TROUBLESHOOTING WORKFLOW
+============================================================
+
+STEP 1 — VERIFY DEVICE TIME SYNCHRONIZATION
+
+Incorrect time settings commonly cause:
+- Invalid verification codes
+- Token mismatches
+
+Resolution:
+- Enable automatic time synchronization
+- Restart authenticator app
+
+Expected Result:
+Valid authentication codes generated.
+
+------------------------------------------------------------
+
+STEP 2 — VERIFY PUSH NOTIFICATIONS
+
+Ensure:
+- Mobile internet active
+- Notification permissions enabled
+- Battery optimization disabled
+
+Expected Result:
+Push notifications received successfully.
+
+------------------------------------------------------------
+
+STEP 3 — RESYNC AUTHENTICATOR APPLICATION
+
+Procedure:
+1. Remove existing MFA registration
+2. Re-register device
+3. Scan enterprise QR code
+4. Test authentication
+
+Expected Result:
+New synchronization established.
+
+------------------------------------------------------------
+
+STEP 4 — VERIFY BACKUP METHODS
+
+Available backup methods:
+- SMS verification
+- Recovery codes
+- Backup authentication devices
+
+Expected Result:
+User regains account access.
+
+============================================================
+5. ADVANCED TROUBLESHOOTING
+============================================================
+
+============================================================
+5.1 MFA LOGIN LOOP
+============================================================
+
+Symptoms:
+- Endless authentication prompts
+- Successful verification but access denied
+
+Resolution:
+- Clear browser cache
+- Remove stale sessions
+- Reauthenticate completely
+
+============================================================
+5.2 LOST OR REPLACED MOBILE DEVICE
+============================================================
+
+Resolution:
+- Verify employee identity
+- Disable old MFA device
+- Register replacement device
+- Invalidate compromised tokens
+
+============================================================
+5.3 HARDWARE TOKEN FAILURE
+============================================================
+
+Symptoms:
+- Hardware token not generating codes
+- Device physically damaged
+
+Resolution:
+- Replace token
+- Assign temporary backup authentication
+- Update token inventory records
+
+============================================================
+6. SECURITY BEST PRACTICES
+============================================================
+
+Employees must:
+- Never share MFA codes
+- Report suspicious MFA prompts
+- Protect recovery codes securely
+- Avoid approving unknown login requests
+
+============================================================
+7. ESCALATION MATRIX
+============================================================
+
+LEVEL 1 SUPPORT:
+- Basic MFA setup
+- Notification troubleshooting
+- Backup code assistance
+
+LEVEL 2 SECURITY TEAM:
+- Device replacement
+- Token synchronization issues
+- Authentication server issues
+
+LEVEL 3 IDENTITY OPERATIONS:
+- Enterprise MFA outages
+- Security compromise investigations
+
+============================================================
+8. INCIDENT PRIORITY GUIDELINES
+============================================================
+
+LOW:
+- Single-user MFA issue
+
+MEDIUM:
+- MFA synchronization failure
+
+HIGH:
+- Multiple users unable to authenticate
+
+CRITICAL:
+- Enterprise-wide MFA outage
+
+============================================================
+9. DOCUMENT END
+============================================================

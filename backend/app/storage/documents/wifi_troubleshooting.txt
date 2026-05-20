@@ -1,0 +1,205 @@
+ENTERPRISE WIFI TROUBLESHOOTING GUIDE
+Version: 2.7
+Department: Network Operations
+Last Updated: March 2026
+
+============================================================
+1. OVERVIEW
+============================================================
+
+This document provides troubleshooting procedures for enterprise
+wireless network connectivity problems.
+
+The enterprise wireless infrastructure supports:
+- Employee laptops
+- Mobile devices
+- Conference room systems
+- Secure guest access
+- Remote branch offices
+
+Supported Wireless Standards:
+- WiFi 5 (802.11ac)
+- WiFi 6 (802.11ax)
+
+Supported Authentication:
+- WPA2 Enterprise
+- WPA3 Enterprise
+- RADIUS Authentication
+- Certificate-Based Access
+
+============================================================
+2. COMMON WIFI ISSUES
+============================================================
+
+Users may report:
+- Unable to connect to WiFi
+- Slow internet speed
+- Frequent disconnections
+- Limited connectivity
+- Authentication failure
+- Weak signal strength
+- DNS resolution problems
+
+============================================================
+3. PRELIMINARY CHECKS
+============================================================
+
+Verify:
+- Wireless adapter enabled
+- Airplane mode disabled
+- Correct SSID selected
+- Internet service operational
+- Access point online
+- DHCP services available
+
+============================================================
+4. STANDARD TROUBLESHOOTING WORKFLOW
+============================================================
+
+STEP 1 — VERIFY WIFI ENABLED
+
+Ensure:
+- Wireless adapter enabled
+- Hardware WiFi switch active
+- Drivers functioning correctly
+
+------------------------------------------------------------
+
+STEP 2 — FORGET AND RECONNECT NETWORK
+
+Remove saved wireless profile and reconnect using:
+- Correct enterprise SSID
+- Valid credentials
+
+Expected Result:
+Fresh authentication session established.
+
+------------------------------------------------------------
+
+STEP 3 — VERIFY SIGNAL STRENGTH
+
+Poor signal may result from:
+- Physical obstructions
+- Distance from access point
+- RF interference
+
+Resolution:
+- Move closer to access point
+- Avoid microwave interference
+- Use alternate wireless band
+
+------------------------------------------------------------
+
+STEP 4 — RESTART NETWORK EQUIPMENT
+
+Restart:
+- Wireless access point
+- Router
+- Network switch if required
+
+Expected Result:
+Temporary network faults cleared.
+
+------------------------------------------------------------
+
+STEP 5 — RUN NETWORK DIAGNOSTICS
+
+Windows:
+- Network Troubleshooter
+- ipconfig /release
+- ipconfig /renew
+
+macOS:
+- Wireless Diagnostics Utility
+
+============================================================
+5. ADVANCED TROUBLESHOOTING
+============================================================
+
+============================================================
+5.1 DHCP ISSUES
+============================================================
+
+Symptoms:
+- APIPA address assigned
+- No internet access
+
+Resolution:
+- Restart DHCP service
+- Renew IP address
+- Verify VLAN configuration
+
+============================================================
+5.2 DNS ISSUES
+============================================================
+
+Symptoms:
+- Websites not resolving
+- IP addresses accessible directly
+
+Resolution:
+- Flush DNS cache
+- Verify DNS server assignment
+- Restart DNS client service
+
+============================================================
+5.3 AUTHENTICATION FAILURE
+============================================================
+
+Symptoms:
+- Incorrect password errors
+- Enterprise login rejected
+
+Resolution:
+- Verify credentials
+- Verify RADIUS server status
+- Reauthenticate user account
+
+============================================================
+6. SECURITY BEST PRACTICES
+============================================================
+
+- Never connect to unauthorized hotspots
+- Use enterprise-approved SSIDs only
+- Avoid sharing WiFi credentials
+- Report suspicious access points
+- Enable device encryption
+
+============================================================
+7. ESCALATION MATRIX
+============================================================
+
+LEVEL 1 SUPPORT:
+- Connectivity verification
+- Password assistance
+- Basic diagnostics
+
+LEVEL 2 NETWORK TEAM:
+- Access point failures
+- VLAN configuration issues
+- DHCP problems
+
+LEVEL 3 INFRASTRUCTURE TEAM:
+- Enterprise wireless outages
+- Core network failures
+- Security incidents
+
+============================================================
+8. INCIDENT PRIORITY GUIDELINES
+============================================================
+
+LOW:
+- Single user intermittent issue
+
+MEDIUM:
+- Multiple users in one area affected
+
+HIGH:
+- Department-wide wireless outage
+
+CRITICAL:
+- Enterprise-wide wireless failure
+
+============================================================
+9. DOCUMENT END
+============================================================
