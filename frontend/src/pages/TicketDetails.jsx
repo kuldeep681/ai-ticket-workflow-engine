@@ -108,7 +108,7 @@ export default function TicketDetails() {
       setLoadingAI(true);
 
       // GENERATE AI RESPONSE
-      const aiResponse = await generateAIResponse(userMessage);
+      const aiResponse = await generateAIResponse(id, userMessage);
 
       // STORE AI RESPONSE
       await addMessage(id, {

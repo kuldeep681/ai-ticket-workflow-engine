@@ -30,6 +30,16 @@ class Document(Base):
         nullable=False
     )
 
+    # ==========================================
+    # WORKFLOW DOMAIN
+    # ==========================================
+
+    workflow_domain = Column(
+        String,
+        nullable=False,
+        default="general"
+    )
+
     uploaded_at = Column(
         DateTime,
         default=datetime.utcnow

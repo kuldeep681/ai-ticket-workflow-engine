@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import List
 
 # =========================================================
 # REQUEST
@@ -6,7 +7,10 @@ from pydantic import BaseModel
 
 class RAGQueryRequest(BaseModel):
 
+    ticket_id: int
+
     question: str
+
 
 # =========================================================
 # RESPONSE
@@ -18,4 +22,4 @@ class RAGQueryResponse(BaseModel):
 
     answer: str
 
-    sources: list[str]
+    sources: List[str]

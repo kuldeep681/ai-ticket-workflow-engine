@@ -23,7 +23,8 @@ collection = client.get_or_create_collection(
 def store_embeddings(
     chunks,
     embeddings,
-    document_name
+    document_name,
+    workflow_domain="general"
 ):
 
     ids = []
@@ -36,12 +37,17 @@ def store_embeddings(
             f"{document_name}_{index}"
         )
 
-        metadatas.append(
-            {
-                "document": document_name,
-                "chunk_index": index
-            }
-        )
+        metadatas.append({
+
+            "document":
+            document_name,
+
+            "chunk_index":
+            index,
+
+            "workflow_domain":
+            workflow_domain
+        })
 
     collection.add(
         documents=chunks,
@@ -51,7 +57,8 @@ def store_embeddings(
     )
 
     print(
-        f"Stored {len(chunks)} chunks in ChromaDB."
+        f"Stored {len(chunks)} chunks "
+        f"for domain {workflow_domain}"
     )
 
 # =========================================================
@@ -60,14 +67,33 @@ def store_embeddings(
 
 def search_similar_chunks(
     query_embedding,
+    workflow_domain="general",
     top_k: int = 3
 ):
 
-    results = collection.query(
-        query_embeddings=[
+    query_payload = {
+
+        "query_embeddings": [
             query_embedding.tolist()
         ],
-        n_results=top_k
+
+        "n_results": top_k
+    }
+
+    # ==============================================
+    # DOMAIN FILTERING
+    # ==============================================
+
+    if workflow_domain != "general":
+
+        query_payload["where"] = {
+
+            "workflow_domain":
+            workflow_domain
+        }
+
+    results = collection.query(
+        **query_payload
     )
 
     return results

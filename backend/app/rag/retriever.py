@@ -6,34 +6,52 @@ from app.rag.vector_store import (
     search_similar_chunks
 )
 
-# =========================================================
-# RETRIEVE RELEVANT CHUNKS
-# =========================================================
 
 def retrieve_relevant_chunks(
     query: str,
+    workflow_domain: str = "general",
     top_k: int = 3
 ):
 
-    # ==============================================
-    # GENERATE QUERY EMBEDDING
-    # ==============================================
+    try:
 
-    query_embedding = generate_embeddings(
-        [query]
-    )[0]
+        query_embedding = (
+            generate_embeddings(
+                [query]
+            )[0]
+        )
 
-    # ==============================================
-    # SEARCH VECTOR DATABASE
-    # ==============================================
+        results = (
+            search_similar_chunks(
+                query_embedding=query_embedding,
+                workflow_domain=workflow_domain,
+                top_k=top_k
+            )
+        )
 
-    results = search_similar_chunks(
-        query_embedding,
-        top_k
-    )
+        documents = results.get(
+            "documents",
+            []
+        )
 
-    # ==============================================
-    # RETURN DOCUMENT CHUNKS
-    # ==============================================
+        if not documents:
+            return []
 
-    return results["documents"][0]
+        if not documents[0]:
+            return []
+
+        cleaned_documents = []
+
+        for doc in documents[0]:
+
+            if doc and isinstance(doc, str):
+
+                cleaned_documents.append(
+                    doc.strip()
+                )
+
+        return cleaned_documents
+
+    except Exception:
+
+        return []

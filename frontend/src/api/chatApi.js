@@ -15,8 +15,9 @@ export const addMessage = async (ticketId, payload) => {
   return response.data;
 };
 
-export const generateAIResponse = async (question) => {
+export const generateAIResponse = async (ticketId, question) => {
   const response = await apiClient.post("/rag/query", {
+    ticket_id: Number(ticketId),
     question,
   });
 

@@ -42,7 +42,7 @@ class OllamaService:
             "stream": False,
             "options": {
                 "temperature": 0.4,
-                "num_predict": 120,
+                "num_predict": 180,
                 "repeat_penalty": 1.2
             }
         }
