@@ -1,0 +1,105 @@
+# =========================
+
+# FRONTEND
+
+# =========================
+
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Logs
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+
+# BACKEND
+
+# =========================
+
+backend/**pycache**/
+backend/**/*.pyc
+backend/**/*.pyo
+backend/**/*.pyd
+
+# Python virtual environments
+
+backend/venv/
+backend/.venv/
+
+# Environment variables
+
+backend/.env
+
+# SQLite databases
+
+*.db
+*.sqlite3
+
+# Pytest / cache
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+
+# ML MODELS + GENERATED FILES
+
+# =========================
+
+backend/app/ml/saved_models/*.pkl
+
+# ChromaDB generated files
+
+backend/app/chroma_db/
+
+# =========================
+
+# OS FILES
+
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+
+# IDE FILES
+
+# =========================
+
+.vscode/
+.idea/
+
+# =========================
+
+# BUILD FILES
+
+# =========================
+
+dist/
+build/
+
+# =========================
+
+# OPTIONAL LARGE DATASETS
+
+# =========================
+
+# Uncomment if datasets are too large
+
+# backend/app/ml/datasets/raw/
+
+# backend/app/ml/datasets/processed/
+
+# =========================
+
+# LOG FILES
+
+# =========================
+
+*.log

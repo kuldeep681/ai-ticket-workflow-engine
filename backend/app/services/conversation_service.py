@@ -84,9 +84,9 @@ class ConversationService:
         # =================================================
 
         if payload.sender.lower() == "user":
-            print("\nUSER MESSAGE DETECTED")
-            print("MESSAGE:", payload.message)
-            print("SENDER:", payload.sender)
+            # print("\nUSER MESSAGE DETECTED")
+            # print("MESSAGE:", payload.message)
+            # print("SENDER:", payload.sender)
 
             WorkflowStateManager.process_message(
                 db=db,
